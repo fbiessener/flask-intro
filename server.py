@@ -77,7 +77,7 @@ def greet_person():
 
 @app.route("/diss")
 def insult_person():
-    """"""
+    """Insult user by name."""
 
     player = request.args.get("person")
 
@@ -94,6 +94,18 @@ def insult_person():
       </body>
     </html>
     """.format(player, insult)
+
+
+@app.route("/allthewords")
+def generate_HTML():
+    """Generates a string of valid HTML from constant."""
+
+    return """
+    <!doctype html>
+    <html>
+      <body>{}</body>
+    </html>
+    """.format(INSULTS)
 
 
 if __name__ == "__main__":
